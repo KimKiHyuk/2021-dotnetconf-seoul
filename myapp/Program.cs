@@ -13,9 +13,10 @@ namespace myapp
         
             var df = spark.Read()
                 .Option("header", true)
-                .Csv("myapp/sample.csv");
+                .Csv("/root/repository/2021-dotnetconf-seoul/myapp/sample.csv");
 
-    
+            var columns = df.Columns();
+            
             df = df.Filter("name IS NOT NULL AND age >= 20")
                 .GroupBy("address")
                 .Count()
