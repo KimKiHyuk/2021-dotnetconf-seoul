@@ -9,13 +9,11 @@ namespace myapp
     {
         static void Main(string[] args)
         {
-            // create the spark session
             SparkSession spark = SparkSession.Builder().GetOrCreate();
-            // create a dataframe from the json file
         
             var df = spark.Read()
                 .Option("header", true)
-                .Csv("2021-dotnetconf-seoul/myapp/sample.csv");
+                .Csv("myapp/sample.csv");
 
     
             df = df.Filter("name IS NOT NULL AND age >= 20")
