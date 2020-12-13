@@ -14,15 +14,17 @@ namespace emrapp
                 .GetOrCreate();
             DataFrame df = spark.Read()
                 .Format("avro")
-                .Load("s3a://spark-data-vjal1251/topics/orders/partition=0/");
-
+                .Load(args[0]);
             
-
+            df = df.Drop("address")
+                .GroupBy("itemid")
+                .Count();
+            
             df.Show();
-            // df.Coalesce(1)
-            //     .Write()
-            //     .Format("csv")
-            //     .Save($"{args[1]}/{DateTime.UtcNow.ToString("yyyy/MM/dd/hh-mm-ss")}");  
+            df.Coalesce(1)
+                .Write()
+                .Format("csv")
+                .Save($"{args[1]}/{DateTime.UtcNow.ToString("yyyy/MM/dd/hh-mm-ss")}");  
         }
     }
 }
