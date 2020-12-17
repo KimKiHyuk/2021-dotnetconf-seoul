@@ -1,7 +1,7 @@
 # 2021-dotnetconf-seoul
 **2021 닷넷 컨퍼런스 .NET for spark 맛보기**
 
-## 101 step
+## 101 guide
 
 ### debug example
 ---
@@ -41,7 +41,7 @@
 1. dotnet build
 1. spark-submit
     ```
-    spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local \ 
+    spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local \
     bin/Debug/netcoreapp3.1/microsoft-spark-2-4_2.11-1.0.0.jar \
     dotnet bin/Debug/netcoreapp3.1/myapp.dll
     ```
@@ -65,8 +65,8 @@
     --conf spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true \
     --packages org.apache.spark:spark-avro_2.11:2.4.6,org.apache.hadoop:hadoop-aws:2.7.7,com.amazonaws:aws-java-sdk:1.7.4 \
     --class org.apache.spark.deploy.dotnet.DotnetRunner --master local bin/Debug/netcoreapp3.1/microsoft-spark-2-4_2.11-1.0.0.jar \
-    dotnet bin/Debug/netcoreapp3.1/emrapp.dll
-    s3a://<your-bucket>/<avro input directory> \ 
+    dotnet bin/Debug/netcoreapp3.1/emrapp.dll \
+    s3a://<your-bucket>/<avro input directory> \
     s3a://<your-bucket>/<output directory>
     ```
 6-1. spark-submit(aws emr)
