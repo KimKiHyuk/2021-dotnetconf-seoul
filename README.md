@@ -83,7 +83,7 @@
   3. 
      ```
      dotnet publish -c Release -f netcoreapp3.1 -r ubuntu.16.04-x64
-     zip -r emrapp.zip bin/Debug/Release/netcoreapp3.1/published
+     zip -r emrapp.zip bin/Release/netcoreapp3.1/ubuntu.16.04-x64/publish/
      aws s3 cp emrapp.zip <s3://<your-bucket>>
      ./deploy.sh
      ```
