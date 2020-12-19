@@ -9,7 +9,7 @@
     ```
     docker run -d --name dotnet-spark \
     -p 4040:4040/tcp -p 5567:5567/tcp -p 6066:6066/tcp -p 7077:7077/tcp -p 8080:8080/tcp -p 8081:8081/tcp -p 8082:8082/tcp \
-    3rdman/dotnet-spark:1.0.0-2.4.6
+    keykim/demo-dotnetconf-seoul
     ```
 1. 도커 extenstion을 통해 컨테이너에 접속
 1. `dotnet new console -o <app name>`
@@ -33,7 +33,7 @@
     ```
     docker run -d --name dotnet-spark \
     -p 4040:4040/tcp -p 5567:5567/tcp -p 6066:6066/tcp -p 7077:7077/tcp -p 8080:8080/tcp -p 8081:8081/tcp -p 8082:8082/tcp \
-    3rdman/dotnet-spark:1.0.0-2.4.6
+    keykim/demo-dotnetconf-seoul
     ```
 1. 도커 extenstion을 통해 컨테이너에 접속
 1. git clone https://github.com/KimKiHyuk/2021-dotnetconf-seoul
@@ -52,7 +52,7 @@
     ```
     docker run -d --name dotnet-spark \
     -p 4040:4040/tcp -p 5567:5567/tcp -p 6066:6066/tcp -p 7077:7077/tcp -p 8080:8080/tcp -p 8081:8081/tcp -p 8082:8082/tcp \
-    3rdman/dotnet-spark:1.0.0-2.4.6
+    keykim/demo-dotnetconf-seoul
     ```
 2. 도커 extenstion을 통해 컨테이너에 접속
 3. git clone https://github.com/KimKiHyuk/2021-dotnetconf-seoul
