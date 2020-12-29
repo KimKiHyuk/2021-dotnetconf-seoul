@@ -1,7 +1,17 @@
 # 2021-dotnetconf-seoul
 **2021 닷넷 컨퍼런스 .NET for spark 맛보기**
 
-## 101 guide
+## Getting started debugging
+
+### 시작하기전에..
+---
+AWS 관련 셋팅을 진행해주세요.
+
+* EXPORT aws_access_key_id==...
+* EXPORT aws_secret_access_key=...
+* aws configure
+...
+
 
 ### debug example
 ---
@@ -27,7 +37,7 @@
     ```
 1. F5
 
-### myapp 101
+### Getting started myapp 
 ---
 1. 도커 컨테이너 실행
     ```
@@ -46,7 +56,7 @@
     dotnet bin/Debug/netcoreapp3.1/myapp.dll
     ```
 
-### emrapp 101
+### Getting started emrapp
 ---
 1. 도커 컨테이너 실행
     ```
@@ -70,12 +80,13 @@
     s3a://<your-bucket>/<output directory>
     ```
 6-1. spark-submit(aws emr)
-  1. upload worker.sh
+  1. upload worker.sh (UDF 실행시 필요)
       ```
       wget https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh
       aws s3 cp install-worker.sh <s3://<your-bucket> 
       ```
-  2. download released worker
+  2. download released worker (UDF 실행시 필요)
+  
      https://github.com/dotnet/spark/releases/tag/v1.0.0 에서 다운로드
      ```
      aws s3 cp Microsoft.Spark.Worker.<zip file>  <s3://<your-bucket>
@@ -87,4 +98,15 @@
      aws s3 cp emrapp.zip <s3://<your-bucket>>
      ./deploy.sh
      ```
+  
+  4. 클러스터 생성
+    
+    스크립트안에 내용들을 본인 환경에 맞게 변경해주세요. (S3 위치 등)
+    
+    ./helper.sh -c
+    stdout은 cluster-id입니다.
+   
+  5. 클러스터에 job 전달
+  
+    ./helper.sh -a <cluster-id>
 
