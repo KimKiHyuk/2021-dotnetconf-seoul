@@ -1,7 +1,8 @@
 # 2021-dotnetconf-seoul
 **2021 닷넷 컨퍼런스 .NET for spark 맛보기**
 
-## Reference
+### Reference
+---
 * https://hub.docker.com/r/3rdman/dotnet-spark
 * https://3rdman.de/2020/10/net-for-apache-spark-interactive-notebook-docker-image/
 * https://3rdman.de/2020/10/build-net-for-apache-spark-with-vs-code-in-a-browser/
@@ -9,11 +10,11 @@
 ## Getting started debugging
 
 ### 시작하기전에..
----
+
 AWS 관련 셋팅을 진행해주세요.
 
-* EXPORT aws_access_key_id==...
-* EXPORT aws_secret_access_key=...
+* EXPORT aws_access_key_id=********
+* EXPORT aws_secret_access_key=********
 * aws configure
 ...
 
