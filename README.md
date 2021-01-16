@@ -1,6 +1,10 @@
 # 2021-dotnetconf-seoul
 **2021 닷넷 컨퍼런스 .NET for spark 맛보기**
 
+세션 정보 : https://www.notion.so/b1ee261688374b9ebd99926ac7f3cef1
+
+세션 영상 : https://www.youtube.com/watch?v=5ZYndr01bkY
+
 ### Reference
 ---
 * https://hub.docker.com/r/3rdman/dotnet-spark
